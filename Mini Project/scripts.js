@@ -67,5 +67,67 @@ for(const p of player){
 }
 
 // Mini Project Minggu 2
+const menu = [
+    {
+        nama: "Tiramisu",
+        harga: 10000,
+        kategori: "Manis"
+    },
+    {
+        nama: "Americano",
+        harga: 10000,
+        kategori: "Strong"
+    },
+    {
+        nama: "Caramel",
+        harga: 10000,
+        kategori: "Manis"
+    },
+    {
+        nama: "Gula Aren",
+        harga: 10000,
+        kategori: "Creamy"
+    }
+];
+// No.1
+menu.forEach((menuItem) =>{
+    console.log(menuItem.nama + " - " + "Rp" + menuItem.harga)
+});
+// disini aku menggunakan forEach untuk melakukan sesuatu terhadap masing - masing object yang ada didalam array
+
+// No.2
+const menuM = menu.filter((menuManis) =>{
+    return menuManis.kategori === "Manis"
+});
+console.log(menuM);
+// filter() disini untuk menyaring kategori manis 
+
+// No.3
+const strong = menu.find((pahit) =>{
+    return pahit.nama === "Americano"
+});
+console.log(strong);
+// untuk No.3 aku mencari kategori Strong untuk mendapatkan Americano 
+
+
+// No.4
+const menuBaru = menu.map((menuB) =>{
+    return {
+        nama:menuB.nama,
+        harga:menuB.harga + 2000,
+        kategori:menuB.kategori
+    };  
+});
+console.log(menuBaru);
+// buat No.4 kita mengubah setiap harga yang ada didalam array, makanya membutuhkan .map()
+
+
+// BOS FIGHT
+const menuEnak = menu.filter((item) =>{
+    return item.kategori === "Manis" && item.harga <=10000;
+});
+console.log(menuEnak);
+
+
 // Mini Project Minggu 3
 // Mini Project Minggu 4
