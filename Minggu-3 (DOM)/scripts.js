@@ -104,28 +104,4 @@ tombolHapus.addEventListener("click", ()=>{
     item.remove()
 });
 
-// ======================= project to do list ========================
 
-const Form = document.querySelector("#todoForm")
-const Input = document.querySelector("#todoInput")
-const List = document.querySelector("#todoList")
-
-Form.addEventListener("submit", (eventt)=> {
-    eventt.preventDefault()
-    if(Input.value.trim() === ""){
-        return
-    }
-    const Item = document.createElement("li")
-    const Hapuss = document.createElement("button")
-    const teks = Input.value.trim()
-    Hapuss.textContent = "Hapus"
-    Item.style.marginTop = "10px"
-    Item.textContent = teks
-    Item.append(Hapuss)
-    Input.value = ""
-    List.append(Item)
-    Hapuss.addEventListener("click", ()=>{
-        Item.remove()
-    })
-})
-// Input masih menerima input kosong, jadi perlu ditambahkan validasi agar tidak bisa menambahkan item kosong ke dalam daftar.
