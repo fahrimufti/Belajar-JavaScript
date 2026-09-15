@@ -131,3 +131,23 @@ console.log(menuEnak);
 
 // Mini Project Minggu 3
 // Mini Project Minggu 4
+const quote = document.querySelector("#quote")
+const author = document.querySelector("#author")
+const btnQuote = document.querySelector("#btnQuote")
+
+async function ambilQuote(){
+    btnQuote.disabled = true
+    btnQuote.textContent = "Loading..."
+    const response = await fetch("https://dummyjson.com/quotes/random")
+    const data = await response.json()
+    quote.textContent = data.quote
+    author.textContent = data.author
+    btnQuote.disabled = false
+    btnQuote.textContent = "Ambil Quote"
+
+}
+
+btnQuote.addEventListener("click", ()=>{
+    ambilQuote()
+    
+})
