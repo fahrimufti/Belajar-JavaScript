@@ -1,4 +1,5 @@
 // mini Project Minggu 1
+
 // level 1
 const angka1 = 10;
 const angka2 = 5;
@@ -130,6 +131,36 @@ console.log(menuEnak);
 
 
 // Mini Project Minggu 3
+// ======================= project to do list ========================
+
+const Form = document.querySelector("#todoForm")
+const Input = document.querySelector("#todoInput")
+const List = document.querySelector("#todoList")
+
+Form.addEventListener("submit", (eventt)=> {
+    eventt.preventDefault()
+    if(Input.value.trim() === ""){
+        return
+    }
+    const Item = document.createElement("li")
+    const Hapuss = document.createElement("button")
+    const teks = Input.value.trim() // trim() untuk menghapus spasi di awal dan akhir input
+    Hapuss.style.marginLeft = "10px"
+    Hapuss.style.backgroundColor = "red"
+    Hapuss.style.borderRadius = "5px"
+    Hapuss.textContent = "Hapus"
+    Item.textContent = teks
+    Item.style.marginTop = "10px"
+    Item.append(Hapuss)
+    Input.value = ""
+    List.append(Item)
+    Hapuss.addEventListener("click", ()=>{
+        Item.remove()
+    })
+})
+// Input masih menerima input kosong, jadi perlu ditambahkan validasi agar tidak bisa menambahkan item kosong ke dalam daftar.
+
+
 // Mini Project Minggu 4
 const quote = document.querySelector("#quote")
 const author = document.querySelector("#author")
@@ -151,3 +182,23 @@ btnQuote.addEventListener("click", ()=>{
     ambilQuote()
     
 })
+
+const janji = new Promise((resolve, reject) => {
+
+    const berhasil = true;
+
+    if (berhasil) {
+        resolve("Data berhasil diambil!")
+    } else {
+        reject("Gagal mengambil data!")
+    }
+
+})
+
+janji
+    .then((hasil) =>{
+        console.log(hasil)
+    })
+    .catch((error) =>{
+        console.log(error)
+    })

@@ -162,7 +162,6 @@ async function ambilData4() {
     })
     console.log(judulSelesai)
 }
-
 ambilData4()
 
 // DOM Manipulation pada API
