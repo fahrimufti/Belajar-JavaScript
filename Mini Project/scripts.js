@@ -167,38 +167,24 @@ const author = document.querySelector("#author")
 const btnQuote = document.querySelector("#btnQuote")
 
 async function ambilQuote(){
-    btnQuote.disabled = true
-    btnQuote.textContent = "Loading..."
-    const response = await fetch("https://dummyjson.com/quotes/random")
-    const data = await response.json()
-    quote.textContent = data.quote
-    author.textContent = data.author
-    btnQuote.disabled = false
-    btnQuote.textContent = "Ambil Quote"
-
-}
+    try{
+        btnQuote.disabled = true
+        btnQuote.textContent = "Loading..."
+            const response = await fetch("https://dummyjson.com/quotes/random")
+            const data = await response.json()
+            quote.textContent = data.quote
+            author.textContent = data.author
+            btnQuote.disabled = false
+            btnQuote.textContent = "Ambil Quote"
+        } catch (error){
+            console.log(error)
+            btnQuote.disabled = false
+            btnQuote.textContent = "Ambil Quote"
+        }
+    } 
 
 btnQuote.addEventListener("click", ()=>{
     ambilQuote()
     
 })
 
-const janji = new Promise((resolve, reject) => {
-
-    const berhasil = true;
-
-    if (berhasil) {
-        resolve("Data berhasil diambil!")
-    } else {
-        reject("Gagal mengambil data!")
-    }
-
-})
-
-janji
-    .then((hasil) =>{
-        console.log(hasil)
-    })
-    .catch((error) =>{
-        console.log(error)
-    })
