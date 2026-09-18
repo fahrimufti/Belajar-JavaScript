@@ -177,7 +177,7 @@ async function ambilQuote(){
                 throw new Error("Gagal mengambil Quote")
             } // akan muncul saat server gagal mengambil data atau NOT FOUND 404
 
-            const data = await response.json()
+            const data = await response.json() 
             quote.textContent = data.quote
             author.textContent = data.author
             btnQuote.disabled = false
