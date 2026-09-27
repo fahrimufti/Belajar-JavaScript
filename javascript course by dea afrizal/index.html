@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookingWeb Dea</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <main class="container">
+        <header class="hero">
+            <h1>Booking Futsal System</h1>
+            <p>web untuk sistem booking futsalmu</p>
+        </header>
+        <section class="card">
+            <div class="card-header">
+                <h4>List Data Booking</h4>
+                <div class="card-actions">
+                    <button class="btn-primary">Refresh</button>
+                    <button class="btn-secondary">+ Booking</button>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kode</th>
+                        <th>Customer</th>
+                        <th>Tanggal</th>
+                        <th>Jam Mulai</th>
+                        <th>Durasi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Dea</td>
+                        <td>18-08-2026</td>
+                        <td>09:00</td>
+                        <td>1 Jam</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Dea2</td>
+                        <td>18-08-2026</td>
+                        <td>08:00</td>
+                        <td>1 Jam</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <div>
+            <form id="booking-form">
+                <select id="lapangan">
+                    <option>loading list lapangan...</option>
+                </select>
+            </form>
+        </div>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+
+</html>
