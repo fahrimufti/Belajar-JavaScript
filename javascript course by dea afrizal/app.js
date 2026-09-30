@@ -1,26 +1,43 @@
 const BASE_URL_API = "https://api.deaidea.io"
-console.log(BASE_URL_API)
 
 const lapangan = document.querySelector("#lapangan")
-console.log(lapangan)
+const bookingList = document.querySelector("#booking-list")
 
 const option = document.createElement("option")
 option.text = "LAPANGAN A"
 
 lapangan.appendChild(option)
 
+async function loadBooking (){
+    const urlAPI = BASE_URL_API + '/bookings'
+    const response = await fetch(urlAPI)
+    const result = await response.json()
+    console.log(result.data)
+    renderBooking(result.data)
+}
+
+function renderBooking(dataList){
+    dataList.forEach(data =>{
+        const tableRow = document.createElement("tr")
+        tableRow.innerHTML = `
+        <td>${data.court_id}</td>
+        <td>${data.customer_name}</td>
+        <td>${data.booking_date}</td>
+        <td>${data.start_time}</td>
+        <td>${data.duration_hours} jam</td>
+        `
+        bookingList.appendChild(tableRow)
+    })
+}
+
 async function loadLapangan(){
     const urlAPI = BASE_URL_API + '/courts'
     const response = await fetch(urlAPI)
-    console.log({response})
     const result = await response.json()
-    console.log(result.data)
     renderLapangan(result.data)
 }
 
 function renderLapangan(courts){
-    console.log("render lapangan!")
-
     courts.forEach(court => {
         const option = document.createElement("option")
         option.text = court.name
@@ -37,5 +54,7 @@ function renderLapangan(courts){
 
 function init(){
     loadLapangan()
+    loadBooking()
 }
 init()
+
