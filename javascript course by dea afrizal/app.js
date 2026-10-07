@@ -4,7 +4,6 @@ const lapangan = document.querySelector("#lapangan")
 const bookingList = document.querySelector("#booking-list")
 
 const option = document.createElement("option")
-option.text = "LAPANGAN A"
 
 lapangan.appendChild(option)
 

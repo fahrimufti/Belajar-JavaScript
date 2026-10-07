@@ -35,14 +35,40 @@
                 <tbody id="booking-list"></tbody>
             </table>
         </section>
-        <section class="">
+
+        <section class="card">
+            <div class="card-header">
+                <h4>Create Booking</h4>
+            </div> 
+
             <form id="booking-form">
-                <select id="lapangan">
-                    <option>loading list lapangan...</option>
-                </select>
+                <label>
+                    Pilih Lapangan
+                    <select id="lapangan">
+                        <option>list lapangan...</option>
+                    </select>
+                </label>
+
+                <label>
+                    Tanggal
+                    <input id="tanggal" type="date" required>
+                </label>
+
+                <label>
+                    Jam Mulai
+                    <input id="jam" type="time" min='08:00' max='22:00' required>
+                </label>
+
+                <label>
+                    Durasi
+                    <select id="durasi" required>
+                        <option value="1">1 Jam</option>
+                        <option value="2">2 Jam</option>
+                        <option value="3">3 Jam</option>
+                    </select>
+                </label>
             </form>
         </section>
-
     </main>
 
     <script src="app.js"></script>
